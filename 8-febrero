@@ -1,0 +1,45 @@
+int LED1 = 3;
+int LED2 = 7;
+int LED3 = 8;
+int t1; int t2; int t3;
+void setup() {
+  Serial.begin(9600);
+  Serial.println("¿Cuantos milisegundos deseas que permanezca encendido el LEDA?");
+  while (Serial.available() == 0) {
+  }
+  t1 = Serial.parseInt();
+  pinMode(LED1, OUTPUT);
+  ////////////////////////////////////////////////////////////////////
+  Serial.println("");
+  Serial.println("¿Cuantos milisegundos deseas que permanezca encendido el LEDB?");
+  while (Serial.available() == 0) {
+  }
+  t2 = Serial.parseInt();
+  pinMode(LED2, OUTPUT);
+
+  /////////////////////////////////////////
+  Serial.println("");
+  Serial.println("¿Cuantos milisegundos deseas que permanezca encendido el LEDC?");
+  while (Serial.available() == 0) {
+  }
+  t3 = Serial.parseInt();
+  pinMode(LED3, OUTPUT);
+
+  ///////////////////////////
+
+}
+
+void loop() {
+  digitalWrite(LED1, HIGH);
+  delay(t1);
+  digitalWrite(LED1, LOW);
+  delay(t1);
+  digitalWrite(LED2, HIGH);
+  delay(t2);
+  digitalWrite(LED2, LOW);
+  delay(t2);
+  digitalWrite(LED3, HIGH);
+  delay(t3);
+  digitalWrite(LED3, LOW);
+  delay(t3);
+}
